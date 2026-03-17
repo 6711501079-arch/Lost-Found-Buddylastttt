@@ -11,6 +11,9 @@
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
     
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="h-full w-full">
@@ -20,14 +23,14 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <div class="app-shell" id="appShell">
-        <nav class="top-navbar" role="navigation" aria-label="Main navigation">
+        <nav class="top-navbar" role="navigation">
             <div class="app-logo">
                 <div class="app-logo-icon">🔎</div>
                 <span class="app-logo-text">Lost & Found Buddy</span>
             </div>
             <div class="nav-actions">
-                <button class="notif-btn" id="notifBtn" aria-label="Notifications">
-                    <i class="bi bi-bell-fill" style="font-size:18px;"></i>
+                <button class="notif-btn" id="notifBtn">
+                    <i class="bi bi-bell-fill"></i>
                     <span class="notif-badge"></span>
                 </button>
                 <div class="avatar-btn" id="avatarBtn">N</div>
@@ -35,12 +38,12 @@
         </nav>
 
         <main>
-            <section class="welcome-section" aria-label="Welcome">
+            <section class="welcome-section">
                 <h1 class="greeting-text" id="greetingText">สวัสดี 👋</h1>
-                <p class="subtitle-text" id="subtitleText">คุณต้องการแจ้งของหายหรือพบของ?</p>
+                <p class="subtitle-text">คุณต้องการแจ้งของหายหรือพบของ?</p>
             </section>
 
-            <section class="action-buttons" aria-label="Main actions">
+            <section class="action-buttons">
                 <button class="action-card action-lost" id="btnLost">
                     <span class="action-emoji">🔍</span>
                     <span class="action-label">แจ้งของหาย</span>
@@ -53,14 +56,14 @@
                 </button>
             </section>
 
-            <section class="search-section" aria-label="Search">
+            <section class="search-section">
                 <div class="search-wrapper">
                     <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาของหายหรือของที่พบ...">
                     <i class="bi bi-search"></i>
                 </div>
             </section>
 
-            <section class="chips-section" aria-label="Categories">
+            <section class="chips-section">
                 <div class="chips-scroll" id="chipsContainer" role="tablist">
                     <button class="chip active" data-category="all">🏷️ ทั้งหมด</button>
                     <button class="chip" data-category="electronics">📱 อิเล็กทรอนิกส์</button>
