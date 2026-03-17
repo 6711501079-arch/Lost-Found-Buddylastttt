@@ -1,0 +1,148 @@
+* { font-family: 'Prompt', sans-serif; box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
+
+:root {
+  --bg-color: #0f0e17;
+  --surface-color: #1a1932;
+  --text-color: #fffffe;
+  --primary-action: #7f5af0;
+  --secondary-action: #2cb67d;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.app-shell {
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--bg-color);
+}
+
+/* Navbar */
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(135deg, var(--surface-color) 0%, #241e4e 100%);
+  backdrop-filter: blur(20px);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(127, 90, 240, 0.15);
+}
+
+.app-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary-action), #e53170);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 15px rgba(127, 90, 240, 0.4);
+}
+
+.app-logo-text {
+  font-weight: 700;
+  font-size: 16px;
+  background: linear-gradient(135deg, #fffffe, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.notif-btn {
+  position: relative;
+  background: rgba(127, 90, 240, 0.15);
+  border: none;
+  border-radius: 12px;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-color);
+}
+
+.notif-badge {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 10px; height: 10px;
+  background: #e53170;
+  border-radius: 50%;
+  border: 2px solid var(--surface-color);
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.avatar-btn {
+  width: 38px; height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--secondary-action), #0ea5e9);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: white;
+}
+
+/* Action Cards */
+.action-buttons { padding: 20px; display: flex; gap: 14px; }
+.action-card {
+  flex: 1; border: none; border-radius: 20px;
+  padding: 22px 16px; text-align: center;
+  transition: all 0.35s ease; color: white;
+}
+.action-lost { background: linear-gradient(135deg, #e53170, #ef4444); }
+.action-found { background: linear-gradient(135deg, #2cb67d, #0ea5e9); }
+.action-card:hover { transform: translateY(-4px); }
+
+/* Search & Chips */
+.search-input {
+  width: 100%; background: var(--surface-color);
+  border: 1.5px solid rgba(127, 90, 240, 0.15);
+  border-radius: 16px; padding: 14px 48px;
+  color: var(--text-color); outline: none;
+}
+.chips-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 10px 20px; scrollbar-width: none; }
+.chip {
+  padding: 8px 18px; border-radius: 30px;
+  border: 1.5px solid rgba(127, 90, 240, 0.2);
+  color: rgba(255, 255, 254, 0.6); white-space: nowrap;
+}
+.chip.active { background: var(--primary-action); color: white; border-color: transparent; }
+
+/* Item Cards */
+.item-card {
+  background: var(--surface-color); border-radius: 20px;
+  margin: 0 20px 14px; padding: 14px;
+  border: 1px solid rgba(127, 90, 240, 0.08);
+}
+.card-img-wrap { width: 90px; height: 90px; border-radius: 14px; overflow: hidden; }
+.lost-bg { background: rgba(229, 49, 112, 0.2); }
+.found-bg { background: rgba(44, 182, 125, 0.2); }
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 480px;
+  background: var(--surface-color);
+  padding: 10px 24px 20px; display: flex; justify-content: space-around;
+}
+.nav-add-btn {
+  width: 56px; height: 56px; border-radius: 18px;
+  background: var(--primary-action); color: white;
+  margin-top: -28px; display: flex; align-items: center; justify-content: center;
+  font-size: 24px; box-shadow: 0 8px 25px rgba(127, 90, 240, 0.4);
+}
+
+/* Ambient */
+.ambient-glow {
+  position: fixed; top: -100px; left: -50px; width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(127,90,240,0.1), transparent 70%);
+}
